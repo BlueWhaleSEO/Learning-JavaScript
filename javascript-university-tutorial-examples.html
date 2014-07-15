@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Learning JavaScript</title>
+
+<!-- List of imported JavaScript files -->
+<script type ="text/javascript" src="readinput.js"></script>     
+<script type ="text/javascript" src="converttocelsius.js"></script>     
+<script type ="text/javascript" src="dayoftheweek.js"></script>
+<script type ="text/javascript" src="radioBtn.js"></script>      
+<script type ="text/javascript" src="removeFriends.js"></script>    
+<script type ="text/javascript" src="addFriends.js"></script>    
+<script type ="text/javascript" src="sortFriends.js"></script>     
+<script type ="text/javascript" src="sortNumber.js"></script>    
+<script type ="text/javascript" src="sortAgeASC.js"></script> 
+<script type ="text/javascript" src="getElements.js"></script> 
+<script type ="text/javascript" src="getHTMLContent.js"></script> 
+<script type ="text/javascript" src="changeHTMLContent.js"></script>
+<script type ="text/javascript" src="changeHTMLContentWithUserInput.js"></script>
+<script type ="text/javascript" src="checkPhoneNumber.js"></script>
+<script type ="text/javascript" src="swapText.js"></script>
+<script type ="text/javascript" src="createList.js"></script>
+<script type ="text/javascript" src="createTable.js"></script>
+<script type ="text/javascript" src="paragraphEventHandler.js"></script>
+
+<!--A list of stylesheets being used for this web page -->	
+   
+</head>
+<body>
+
+<br />
+<h1>Learning JavaScript (DOM)</h1>
+<h3>Form1 - Read input text</h3>
+<form name="form1" method="GET" action= "parse.php">
+<input type="text" name="textEntry1" />
+<input type="button" value="Click me" onclick="readInput(textEntry1.value);" />
+</form>
+
+<br />
+<h3>Form2 - Convert temperature from Fahrenheit to Celsius (Centigrade)</h3>
+<form name="form2" method="GET" action= "parse.php">
+<input type="text" name="textEntry2" />
+<input type="button" value="Click for temp." onclick="convertToCelsius(textEntry2.value);" />
+</form>
+
+<br />
+<h3>Form3 - What Day of the Week is now (enter a number)</h3>
+<form name="form3" method="GET" action= "parse.php">
+<input type="text" name="textEntry3" />
+<input type="button" value="Click for day of the week" onclick="DayOfTheWeek(textEntry3.value);" />
+</form>
+
+<br />
+<h3>Form4 - Brings up your choice</h3>
+<form name="form4" method="GET" action="parse.php">
+<input type="radio" name="CourseOption" value="SE">Software Engineering<br>
+<input type="radio" name="CourseOption" value="CS">Computer Science<br>
+<input type="radio" name="CourseOption" value="DM">Digital Media<br>
+<input type="button" value="Select Course" onclick="radioBtn();" />
+</form> 
+
+<br />
+<h3>Form5 - Adds/removes item (friend) to/from an array</h3>
+<form name="form5" method="GET" action="parse.php">
+<input type="button" value="Remove friend / Add another" onclick="removeFriends();" />
+</form> 
+
+<br />
+<h3>Form6 - Adds user's input (friend) to an array</h3>
+<form name="form6" method="GET" action="parse.php">
+Enter name:<input type="text" name="name" value="">
+<input type="button" value="Add friend" onclick="addFriends();" />
+</form>
+
+<br />
+<h3>Form7 - Sorts items (friends) by name</h3>
+<form name="form7" method="GET" action="parse.php">
+<input type="button" value="Sort Friends by name" onclick="sortFriends();" />
+</form>
+
+<br />
+<h3>Form8- Sorts items by their age (ascending)</h3>
+<form name="form8" method="GET" action="parse.php">
+<input type="button" value="Sort Friends by number" onclick="compare();" />
+</form>
+ 
+<br />
+<h3>Form9 - Sorts friends by their age (descending)</h3>
+<form name="form9" method="GET" action="parse.php">
+<input type="button" value="Sort Friends by age" onclick="compare2()" />
+</form>
+
+<br />
+<h3>Form10 - Get element by its ID</h3>
+<p>First paragraph</p>
+<p>Second paragraph</p>
+<p>Third paragraph</p>
+<p>Fourth paragraph</p>
+<form name="form10" method="GET" action="parse.php">
+<input type="button" value="Display elements" onclick="getElements()" />
+</form>
+
+<br />
+<h3 id="h3Tag">Form11 - Get HTML content and replace it with input</h3>
+<div id="my-content">
+	<p>This is <em>my</em> content.</p>
+</div>
+<form name="form11" action="parse.php">
+<input type="button" value="Get HTML content" onclick="getHTMLContent()" />
+<input type="button" value="Change HTML content" onclick="changeHTMLContent()" />
+<input type="text" value="Enter text here" id="userInput" />
+<input type="button" value="Change HTML content with the text you entered" onclick="changeHTMLContentWithUserInput()" />
+</form>
+
+<br />
+<h3>Form12 - Check if phone number entered is valid</h3>
+<form name="form12" action="parse.php">
+Phone: <input type="text" id="phoneNumber" value="" onkeyup="checkPhoneNumberKeyUp()">
+<input type="button" value="Validate" onclick="checkPhoneNumberOnClick()" /><br/>
+<span id="invalid-number"></span>
+</form>
+
+<br />
+<h3>Form13 - Dynamically swapping text</h3>
+<h4 id="h4Tag1">First heading text</h4>
+<h4 id="h4Tag2">Second heading text</h4>
+<form name="form13" action="parse.php">
+<input type="button" value="Swap Text" onclick="swapText()" />
+</form>
+
+<br />
+<h3>Form14 - Dynamically create an ordered list</h3>
+<span id="list1"></span>
+<form name="form14" action="parse.php">
+<input type="text" id="text1">
+<input type="button" value="Add an element to a list" onclick="createList()" />
+</form>
+
+<br />
+<h3>Form15 - Dynamically create a table</h3>
+<div id="tableArea"></div>
+<form name="form15" action="parse.php">
+Student name:   <input type="text" id="studentName"><br />
+Student age:    <input type="text" id="studentAge"><br />
+Student degree: <input type="text" id="studentDegree"><br />
+<input type="button" value="Create a table" onclick="createTable()" />
+</form>
+
+<h3>Storing information: Cookies</h3>
+<!-- Cookies script format -->
+<script language="JavaScript" type="text/javascript">
+	var expireDate = new Date();
+	expireDate.setMonth(expireDate.getMonth() + 6);
+	document.cookie = "UserName=Donatas;expires=" + expireDate.toGMTString() + ";path=/ds286" + ";domain=itsuite.it.brighton.ac.uk" + ";secure=false;";
+</script>
+
+<h1> Dynamic HTML (DHTML)</h1>
+<h3>Using the type Property</h3>
+<p onmouseover="paragraph_eventHandler()">
+	Move your mouse over me.
+</p>
+<p onclick="paragraph_eventHandler()">
+	Click me!
+</p>
+
+<br />
+<!-- Document validation -->
+<a href="http://validator.w3.org/check?uri=http%3A%2F%2Fitsuite.it.brighton.ac.uk%2Fds286%2Fjavascript-la%2Fjavascript-university-tutorial-examples.html">HTML5 valid document</a>
+
+</body>
+</html>
